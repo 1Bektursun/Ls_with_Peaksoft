@@ -24,15 +24,32 @@ public class Test {
 //            System.out.println("Final block dayima ishteit!");
 //        }
 
+//        try{
+//            int age = scanner.nextInt();
+//            if(age<0){
+//                throw new MyException();
+//            }else{
+//                System.out.println("I'm " + age + " years old");
+//            }
+//        }catch (MyException exception){
+//            System.out.println("Age can't be lower than 0");
+//        }
+
         try{
+            System.out.println("Enter your name: ");
+            String name = scanner.nextLine();
+            if(!name.matches("[z-zA-Za-яА-Я]*")){
+                throw new MyException();
+            }
+            System.out.println("Enter your age: ");
             int age = scanner.nextInt();
             if(age<0){
                 throw new MyException();
-            }else{
-                System.out.println("I'm " + age + " years old");
             }
-        }catch (MyException exception){
-            System.out.println("Age can't be lower than 0");
+        }catch (MyException ex){
+            System.out.println("Wrong input!");
+        }catch (InputMismatchException ex){
+            System.out.println("Age can't be writes with letters!");
         }
     }
 }
