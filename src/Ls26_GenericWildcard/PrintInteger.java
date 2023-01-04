@@ -1,12 +1,11 @@
 package Ls26_GenericWildcard;
 
-public class PrintInteger {
-    private int element;
+import java.util.Comparator;
 
-    public PrintInteger(int element) {
-        this.element = element;
+public class PrintInteger <E extends Comparable<E>>{
+    public void print(E parametr){
+        System.out.println(parametr);
     }
-    public void print( ){
-        System.out.println(element);
-    }
+
+
 }
